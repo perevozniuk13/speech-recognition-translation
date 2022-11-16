@@ -1,6 +1,4 @@
-import googletrans 
 from googletrans import Translator
-import speech_recognition
 
 def googleTranslation(sentence, fromLan=None, toLan='en'):
     translator = Translator()
