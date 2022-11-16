@@ -22,18 +22,7 @@ def silence_based_video(path, lang):
            # r.adjust_for_ambient_noise(source)
             audio_listened = r.listen(source)
             rec = r.recognize_google(audio_listened, language=lang)
-            print('rec', rec)
             text_file.write(rec+". ")
             translated_text_file.write(googleTranslation(rec, 'en', 'ru')+". ")
-        i += 1
-        print('i =', i)
+    return "Successfully recognized and translated"
 silence_based_video("audio.wav", 'en-EN')
-#with sr.Microphone() as source: # or an audio file instead of sr.Microphone
-#with sr.AudioFile("audio.wav") as source:
-#    print("Listening to the audio...")
-#    audio = r.listen(source)
-   # try:
-#    text = r.recognize_google(audio)
-#    print("Text of the audio: {}".format(text))
-    #except:
-       # print("Sorry! Could not recognize the speech!")
